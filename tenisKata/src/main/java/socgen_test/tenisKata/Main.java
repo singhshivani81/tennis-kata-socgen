@@ -2,6 +2,7 @@ package socgen_test.tenisKata;
 
 public class Main {
 
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String player1 = "John";
@@ -21,6 +22,8 @@ public class Main {
 		int[] table2Player1 = {0,0,1,1,0,0};
 		int[] table2Player2 = {1,1,0,0,1,1};
 		game.playGame(table2Player1, table2Player2);
+		System.out.println("Test");
 	}
+
 
 }
