@@ -1,13 +1,15 @@
 package socgen_test.tenisKata;
 
 public class Game {
-	private String player1;
-	private String player2;
+	private Player player1;
+	private Player player2;
 	private Points points;
 
 	public Game() {
 		super();
-		points = new Points();
+		this.player1 = new Player();
+		this.player2 = new Player();
+		this.points = new Points();
 	}
 
 	public void playGame(int[] pointTablePlayer1, int[] pointTablePlayer2) {	
@@ -16,31 +18,32 @@ public class Game {
 		 for(int i=0 ; i<= pointTablePlayer1.length-1; i++) {
 			 pointPlayer1 += pointTablePlayer1[i]; 
 			 pointPlayer2 += pointTablePlayer2[i];
-			 System.out.println(Constants.POINTS_WON + getPlayer1() + ":" + calculateScore(pointPlayer1) + " --- " +
-					 Constants.POINTS_WON + getPlayer2() + ":" + calculateScore(pointPlayer2) + Constants.ROUNDS + (i+1) );
+			 if(points.isDuece && Math.abs(pointPlayer1-pointPlayer2)==2) {
+				 if(pointPlayer1>pointPlayer2) {
+					 System.out.println(" Player1  is the winner " +  Constants.ROUNDS + (i+1));
+				 }
+				 else {
+					 System.out.println(" Player2 is the winner " +  Constants.ROUNDS + (i+1));
+				 }
+				 break;
+			 }
+			 if(player1.getScore() == "40" && player2.getScore() == "40") { points.setDuece(true); }
+			 
+			 player1.setScore(calculateScore(pointPlayer1 ,pointTablePlayer1[i]));
+			 player2.setScore(calculateScore(pointPlayer2 ,pointTablePlayer2[i])); 
+			 System.out.println("Player1 score is:"+ player1.getScore() +
+					  " and Player1 score is:"+player2.getScore()+ Constants.ROUNDS + (i+1));
 		 }
 	}
 	
-	public String calculateScore(int totalPoints) {
-		return points.pointsNoDuece(totalPoints);
+	public String calculateScore(int totalPoints , int point) {		
+		return points.calculatePoints(totalPoints , point);
 	}
+	
 
 
-	public String getPlayer1() {
-		return player1;
-	}
 
-	public void setPlayer1(String player1) {
-		this.player1 = player1;
-	}
-
-	public String getPlayer2() {
-		return player2;
-	}
-
-	public void setPlayer2(String player2) {
-		this.player2 = player2;
-	}
+	
 	
 
 }

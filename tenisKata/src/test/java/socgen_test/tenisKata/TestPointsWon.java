@@ -25,5 +25,15 @@ public class TestPointsWon {
 	        assertEquals(Constants.WIN,point.pointsNoDuece(4));	        
 	        assertNotEquals(40,point.pointsNoDuece(3));
 	    } 
+	  
+	  @Test  
+	    public void testSetAdvantage(){  
+	        assertEquals(1,point.setAdvantage(1));  
+	        assertEquals(0,point.setAdvantage(0));	 
+	        assertNotEquals(0,point.setAdvantage(1));
+	        assertNotEquals(1,point.setAdvantage(0));
+	    }
+	  
+	  
 
 }
