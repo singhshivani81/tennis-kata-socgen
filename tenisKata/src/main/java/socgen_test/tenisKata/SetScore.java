@@ -21,6 +21,23 @@ public class SetScore {
 		else if(player2GameScore==(setScore6+1) && player1GameScore<setScore6) {
 			return Constants.PLAYER2_WINS;
 		}	
+		else if(player1GameScore >= setScore6 && player2GameScore>= setScore6) {
+			return tieBreaker(player1GameScore,player2GameScore);
+		}
+		else {
+			return Constants.REMATCH;
+		}
+	}
+	
+	public String tieBreaker(int player1GameScore, int player2GameScore) {	
+		if(Math.abs(player1GameScore - player2GameScore)==2) {
+			if(player1GameScore > player2GameScore ) {
+				return Constants.PLAYER1_WINS;
+			}
+			else {
+				return Constants.PLAYER2_WINS;
+			}
+		}
 		else {
 			return Constants.REMATCH;
 		}

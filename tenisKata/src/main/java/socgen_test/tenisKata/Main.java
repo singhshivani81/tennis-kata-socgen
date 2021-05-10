@@ -34,16 +34,22 @@ public class Main {
 //		game.playGame(table4Player1, table4Player2);
 		
 //		
-		System.out.println("---------------------GAME SET 1 ----------------------------------------------");
-		int[] matchSet1TablePlayer1 = {1,1,1,1,1,0,1};
-		int[] matchSet1TablePlayer2 = {0,0,0,0,0,1,0};	
-		game.getMatchSetScore(matchSet1TablePlayer1, matchSet1TablePlayer2, setScore6, setScore4);
+//		System.out.println("---------------------GAME SET 1 ----------------------------------------------");
+//		int[] matchSet1TablePlayer1 = {1,1,1,1,1,0,1};
+//		int[] matchSet1TablePlayer2 = {0,0,0,0,0,1,0};	
+//		game.getMatchSetScore(matchSet1TablePlayer1, matchSet1TablePlayer2, setScore6, setScore4);
+//		
+//		System.out.println("---------------------GAME SET 2 ----------------------------------------------");
+//		int[] matchSet2TablePlayer1 = {1,1,1,1,1,0,0,0,0,0,0,0};
+//		int[] matchSet2TablePlayer2 = {0,0,0,0,0,1,1,1,1,1,1,1};	
+//		game.getMatchSetScore(matchSet2TablePlayer1, matchSet2TablePlayer2, setScore6, setScore4);
 		
-		System.out.println("---------------------GAME SET 2 ----------------------------------------------");
-		int[] matchSet2TablePlayer1 = {1,1,1,1,1,0,0,0,0,0,0,0};
-		int[] matchSet2TablePlayer2 = {0,0,0,0,0,1,1,1,1,1,1,1};	
-		game.getMatchSetScore(matchSet2TablePlayer1, matchSet2TablePlayer2, setScore6, setScore4);
-		
+  		System.out.println("---------------------GAME SET 3 ----------------------------------------------");
+	    int[] matchSet3TablePlayer1 = {1,1,1,0,0,0,1,1,0,0,0,1,1,1};
+	    int[] matchSet3TablePlayer2 = {0,0,0,1,1,1,0,0,1,1,1,0,0,0};	
+	    game.getMatchSetScore(matchSet3TablePlayer1, matchSet3TablePlayer2, setScore6, setScore4);
+
+
 		
 	}
 
