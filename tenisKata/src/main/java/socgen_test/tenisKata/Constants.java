@@ -9,7 +9,9 @@ public final class Constants {
 	public static final String ROUNDS = " after Round :";
 	public static final String ADVANTAGE = "ADVANTAGE";
 	public static final String NO_ADVANTAGE = "NO ADVANTAGE";
-	
+	public static final String PLAYER1_WINS = "PLAYER1 WINS";
+	public static final String PLAYER2_WINS = "PLAYER2 WINS";
+	public static final String REMATCH = "REMATCH";
 
 }
 

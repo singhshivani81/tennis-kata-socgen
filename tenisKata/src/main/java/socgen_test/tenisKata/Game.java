@@ -4,12 +4,14 @@ public class Game {
 	private Player player1;
 	private Player player2;
 	private Points points;
+	private SetScore setScore;
 
 	public Game() {
 		super();
 		this.player1 = new Player();
 		this.player2 = new Player();
 		this.points = new Points();
+		this.setScore = new SetScore();
 	}
 
 	public void playGame(int[] pointTablePlayer1, int[] pointTablePlayer2) {	
@@ -40,6 +42,31 @@ public class Game {
 		return points.calculatePoints(totalPoints , point);
 	}
 	
+	
+	public void getMatchSetScore(int[] matchSetTablePlayer1, int[] matchSetTablePlayer2, int setScore6 , int setScore4) {
+		int matchScorePlayer1=0;
+		int matchScorePlayer2=0;
+		for(int i=0 ; i<= matchSetTablePlayer1.length-1; i++) {
+			matchScorePlayer1 += matchSetTablePlayer1[i]; 
+			matchScorePlayer2 += matchSetTablePlayer2[i];
+			player1.setSetScore(matchScorePlayer1);
+			player2.setSetScore(matchScorePlayer2);
+			if(player1.getSetScore() >= setScore6 || player2.getSetScore()>= setScore6) {
+				String result = setScore.compareResults(player1.getSetScore(),player2.getSetScore(),setScore6 ,setScore4);
+				if(result != Constants.REMATCH) {	
+					System.out.println("Player1 score is:"+ player1.getSetScore()+ " and P2 score is:"+player2.getSetScore()+ " at the end of "+(i+1) +" matches");
+					System.out.println(result);
+					break;
+				}
+				else {									
+					continue;
+				}				
+			}
+			System.out.println("P1 score is:"+ player1.getSetScore()+ " and P2 score is:"+player2.getSetScore()+ " at the end of "+(i+1) +" matches");
+			
+		}
+		
+	}
 
 
 
